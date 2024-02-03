@@ -1,39 +1,53 @@
 .header {
-  @apply py-2 transition-all duration-200 ease-in-out;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: all 0.2s ease;
 }
 
 .light {
-  @apply bg-[#403d39];
+  background-color: #403d39;
 }
 
 .dark {
-  @apply bg-[#212529];
+  background-color: #212529;
 }
 
 .header__box {
-  @apply flex items-center justify-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header__toggle {
-  @apply flex items-center gap-4;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .lang {
-  @apply cursor-pointer;
+  cursor: pointer;
 }
 
 .lightToggle {
-  @apply text-[#ccc5b9];
+  color: #ccc5b9;
 }
 
 .darkToggle {
-  @apply text-[#adb5bd];
+  color: #adb5bd;
 }
 
 .text {
-  @apply border py-[3px] px-4 rounded-lg;
+  border-width: 1px;
+  padding: 4px 1rem;
+  font-size: 16px;
+  border-radius: 0.375rem;
 }
 
 .dark__light {
-  @apply flex items-center justify-center w-[35px] h-[35px] cursor-pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
 }

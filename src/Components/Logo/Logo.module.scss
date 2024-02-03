@@ -1,154 +1,248 @@
 .logo {
   transition: all 0.2s ease;
-  @apply relative h-[100%];
+  position: relative;
+  height: 100%;
 }
 
 .light {
   .logo__title {
-    @apply text-[#403d39];
+    color: #403d39;
   }
 
   .logo__subtitle {
-    @apply text-[#403d39];
+    color: #403d39;
   }
 
   .logo__card {
-    @apply bg-[#ccc5b9] shadow-[#212529];
+    background-color: #ccc5b9;
   }
 
   .logo__btn {
-    @apply text-[#403d39] bg-[#ccc5b9] hover:bg-[#d6cec2];
-  }
-
-  .logo__btnRed {
-    @apply text-[#fffcf2] bg-[#6f1d1b] hover:bg-[#852322];
-  }
-
-  .logo__label {
-    @apply text-[#403d39];
-  }
-
-  .logo__inpTitle {
-    @apply bg-[#ccc5b9];
-    &::placeholder {
-      @apply text-[#403d39];
+    color: #403d39;
+    background-color: #ccc5b9;
+    &:hover {
+      background-color: #d6cec2;
     }
   }
 
-  .logo__inpImg {
-    @apply text-[#403d39] file:bg-[#ccc5b9] file:text-[#403d39] hover:file:bg-[#eae0d5];
+  .logo__btnRed {
+    color: #fffcf2;
+    background-color: #6f1d1b;
+    &:hover {
+      background-color: #852322;
+    }
+  }
+
+  .logo__label {
+    color: #403d39;
+
+    & > [type="file"]::-webkit-file-upload-button {
+      color: #403d39;
+      background-color: #ccc5b9;
+      &:hover {
+        background-color: #eae0d5;
+      }
+    }
+  }
+
+  .logo__inpTitle {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &::placeholder {
+      color: #403d39;
+    }
   }
 
   .logo__putBtn {
-    @apply text-[#403d39] bg-[#ccc5b9] hover:bg-[#eae0d5];
+    color: #403d39;
+    background-color: #ccc5b9;
+    &:hover {
+      background-color: #eae0d5;
+    }
   }
 }
 
 .dark {
   .logo__title {
-    @apply text-[#ced4da];
+    color: #ced4da;
   }
 
   .logo__subtitle {
-    @apply text-[#ced4da];
+    color: #ced4da;
   }
 
   .logo__card {
-    @apply bg-[#6c757d] shadow-[#212529];
+    background-color: #6c757d;
   }
 
   .logo__btn {
-    @apply text-[#ced4da] bg-[#6c757d] hover:bg-[#7b868f];
-  }
-
-  .logo__btnRed {
-    @apply text-[#ced4da] bg-[#6f1d1b] hover:bg-[#852322];
-  }
-
-  .logo__label {
-    @apply text-[#ced4da];
-  }
-
-  .logo__inpTitle {
-    @apply bg-[#ced4da];
-    &::placeholder {
-      @apply text-[#212529];
+    color: #ced4da;
+    background-color: #6c757d;
+    &:hover {
+      background-color: #7b868f;
     }
   }
 
-  .logo__inpImg {
-    @apply text-[#ced4da] file:bg-[#ced4da] file:text-[#212529] hover:file:bg-[#e9ecef];
+  .logo__btnRed {
+    color: #ced4da;
+    background-color: #6f1d1b;
+    &:hover {
+      background-color: #852322;
+    }
+  }
+
+  .logo__label {
+    color: #ced4da;
+
+    & > [type="file"]::-webkit-file-upload-button {
+      color: #212529;
+      background-color: #ced4da;
+      &:hover {
+        background-color: #e9ecef;
+      }
+    }
+  }
+
+  .logo__inpTitle {
+    color: #212529;
+    background-color: #ced4da;
+    &::placeholder {
+      color: #212529;
+    }
   }
 
   .logo__putBtn {
-    @apply text-[#212529] bg-[#ced4da] hover:bg-[#e9ecef];
+    color: #212529;
+    background-color: #ced4da;
+    &:hover {
+      background-color: #e9ecef;
+    }
   }
 }
 
 .logo__box {
-  @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-70%];
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
 }
 
 .logo__title {
-  @apply text-[22px] mt-0 mb-10;
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .logo__cardBox {
-  @apply flex gap-8 mb-8;
+  display: flex;
+  gap: 35px;
 }
 
 .logo__card {
-  @apply rounded-lg pb-4 px-4 shadow-xl;
+  padding: 0 12px 20px;
+  border-radius: 8px;
+  box-shadow: #21252970 0px 8px 24px 0px;
 }
 
 .logo__cardImg {
-  @apply mb-6;
+  margin-bottom: 6px;
 }
 
 .logo__subtitle {
-  @apply text-center;
+  text-align: center;
 }
 
 .logo__btnBox {
-  @apply flex items-center justify-end gap-4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 2.5rem;
 }
 
 .logo__btn {
-  @apply flex items-center gap-1 py-1 px-4 rounded-lg shadow-2xl;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 22px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
 }
 
 .logo__btnRed {
-  @apply flex items-center gap-1 py-1 px-4 rounded-lg shadow-2xl;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 22px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
 }
 
 .logo__modal {
-  @apply flex flex-col;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo__modalText {
-  @apply my-4;
+  margin: 1rem 0;
 }
 
 .logo__modalBtn {
-  @apply flex items-center gap-1 ml-auto font-semibold py-1 px-4 rounded-lg shadow-2xl text-[#ced4da] bg-[#6f1d1b] hover:bg-[#852322];
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-left: auto;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+  color: #ced4da;
+  background-color: #6f1d1b;
+  &:hover {
+    background-color: #852322;
+  }
 }
 
 .logo__form {
-  @apply absolute top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[100%] max-w-[400px];
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
 }
 
 .logo__label {
-  @apply w-full flex items-center justify-between gap-4 mb-4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+
+  & > [type="file"]::-webkit-file-upload-button {
+    border-radius: 9999px;
+    padding: 6px 18px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 
 .logo__inpTitle {
-  @apply w-[100%] border-[2px] rounded-md py-1 px-4;
+  width: 100%;
+  border-radius: 8px;
+  padding: 4px 16px;
 }
 
 .logo__inpImg {
-  @apply block w-[60%] text-sm file:cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold;
+  display: block;
+  width: 60%;
+  font-size: 14px;
 }
 
 .logo__putBtn {
-  @apply font-semibold py-1 px-4 rounded-lg shadow-2xl;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
 }

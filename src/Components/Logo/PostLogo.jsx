@@ -92,7 +92,7 @@ const PostLogo = () => {
           required
         />
       </label>
-      <div className="text-end">
+      <div className={styles.logo__btnBox}>
         <button className={styles.logo__putBtn} type="submit">
           Submit
         </button>

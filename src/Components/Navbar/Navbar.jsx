@@ -20,10 +20,10 @@ const Navbar = ({ theme }) => {
       </div>
       <div className={styles.bottom}>
         <span className={styles.line}></span>
-        <Link className={styles.link} to={"support"}>
+        <Link className={styles.link__bottom} to={"support"}>
           {lang === "ru" ? "Поддерживать" : "Qo'llab-quvvatlash"}
         </Link>
-        <Link className={styles.link} to={"settings"}>
+        <Link className={styles.link__bottom} to={"settings"}>
           {lang === "ru" ? "Настройки" : "Sozlamalar"}
         </Link>
       </div>
