@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Header.module.scss";
 import ThemeToggle from "./ThemeToggle/ThemeToggle";
 import LangToggle from "./LangToggle/LangToggle";
 import { useSelector } from "react-redux";
@@ -14,10 +13,12 @@ const Header = () => {
 
   return (
     <header
-      className={`${styles.header} ${themeList ? styles.light : styles.dark}`}
+      className={`py-2 transition-all duration-200 ease-in-out ${
+        themeList ? "bg-[#403d39]" : "bg-[#212529]"
+      }`}
     >
       <div className="container">
-        <div className={styles.header__box}>
+        <div className="flex items-center justify-between">
           <Link to="/">
             {logoList !== undefined ? (
               <img
@@ -30,7 +31,7 @@ const Header = () => {
               <></>
             )}
           </Link>
-          <div className={styles.header__toggle}>
+          <div className="flex items-center gap-4">
             <ThemeToggle />
             <LangToggle />
           </div>
