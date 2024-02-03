@@ -1,0 +1,109 @@
+.errorDark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+
+  .title {
+    color: #b8b8b8;
+  }
+  .message,
+  .statusText {
+    color: #8b8b8b;
+  }
+  .link {
+    color: #fff;
+    background: #407bff;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+
+  .title {
+    color: #b8b8b8;
+  }
+  .message,
+  .statusText {
+    color: #8b8b8b;
+  }
+  .link {
+    color: #fff;
+    background: #407bff;
+  }
+}
+
+.error__content {
+  width: 40%;
+}
+
+.title {
+  margin: 0 0 20px;
+  -webkit-text-stroke-width: 3;
+  font-size: 70px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.message {
+  margin: 0 0 20px;
+  font-size: 40px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.statusText {
+  margin: 0 0 20px;
+  font-size: 30px;
+  font-style: normal;
+  line-height: 57.239px;
+  letter-spacing: 1.441px;
+}
+
+.link {
+  display: inline-block;
+  padding: 7px 25px;
+  font-size: 20px;
+  font-style: normal;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 745px) {
+  .title {
+    font-size: 40px;
+  }
+  .message {
+    font-size: 24px;
+  }
+  .statusText {
+    font-size: 16px;
+  }
+  .link {
+    padding: 4px 25px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 447px) {
+  .title {
+    font-size: 25px;
+  }
+  .message {
+    font-size: 16px;
+  }
+  .statusText {
+    font-size: 12px;
+  }
+  .link {
+    font-size: 12px;
+  }
+}

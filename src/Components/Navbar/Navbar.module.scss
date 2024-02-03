@@ -1,0 +1,51 @@
+.navbar {
+  transition: all 0.2s ease;
+  @apply flex flex-col justify-between h-full py-6;
+}
+
+.light {
+  .top {
+    @apply divide-slate-400;
+  }
+  .line {
+    @apply border-slate-400;
+  }
+  .link {
+    @apply text-[#ccc5b9];
+    &:hover {
+      @apply bg-[#616161];
+    }
+  }
+}
+
+.dark {
+  .top {
+    @apply divide-slate-700;
+  }
+  .line {
+    @apply border-slate-700;
+  }
+  .link {
+    @apply text-[#adb5bd];
+    &:hover {
+      @apply bg-[#343a40];
+    }
+  }
+}
+
+.top {
+  @apply flex flex-col divide-y-2;
+}
+
+.bottom {
+  @apply flex flex-col w-full;
+}
+
+.line {
+  @apply block mx-auto mb-2 border-t-2 w-[80%];
+}
+
+.link {
+  @apply block py-[14px] px-[25px];
+  transition: all 0.2s ease;
+}
