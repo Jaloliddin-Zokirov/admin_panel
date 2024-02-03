@@ -1,20 +1,22 @@
 .main {
-  @apply h-full flex;
+  display: flex;
+  height: 100%;
 }
 
 .navbar {
-  @apply w-[20%];
+  width: 20%;
   transition: all 0.2s ease;
 }
 
 .dark {
-  @apply bg-[#212529];
+  background: #212529;
 }
 
 .light {
-  @apply bg-[#403d39];
+  background: #403d39;
 }
 
 .outlet {
-  @apply w-[80%] p-6;
+  width: 80%;
+  padding: 24px;
 }
