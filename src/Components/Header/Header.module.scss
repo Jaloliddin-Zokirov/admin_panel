@@ -1,0 +1,39 @@
+.header {
+  @apply py-2 transition-all duration-200 ease-in-out;
+}
+
+.light {
+  @apply bg-[#403d39];
+}
+
+.dark {
+  @apply bg-[#212529];
+}
+
+.header__box {
+  @apply flex items-center justify-between;
+}
+
+.header__toggle {
+  @apply flex items-center gap-4;
+}
+
+.lang {
+  @apply cursor-pointer;
+}
+
+.lightToggle {
+  @apply text-[#ccc5b9];
+}
+
+.darkToggle {
+  @apply text-[#adb5bd];
+}
+
+.text {
+  @apply border py-[3px] px-4 rounded-lg;
+}
+
+.dark__light {
+  @apply flex items-center justify-center w-[35px] h-[35px] cursor-pointer;
+}

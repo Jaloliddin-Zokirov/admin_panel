@@ -1,6 +1,7 @@
 import React from "react";
-import ThemeToggle from "./ThemeToggle/ThemeToggle";
-import LangToggle from "./LangToggle/LangToggle";
+import styles from "./Header.module.scss";
+import ThemeToggle from "./ThemeToggle";
+import LangToggle from "./LangToggle";
 import { useSelector } from "react-redux";
 import LogoWrite from "../../Store/Logo/LogoWrite";
 import { Link } from "react-router-dom";
@@ -13,12 +14,10 @@ const Header = () => {
 
   return (
     <header
-      className={`py-2 transition-all duration-200 ease-in-out ${
-        themeList ? "bg-[#403d39]" : "bg-[#212529]"
-      }`}
+      className={`${styles.header} ${themeList ? styles.light : styles.dark}`}
     >
       <div className="container">
-        <div className="flex items-center justify-between">
+        <div className={styles.header__box}>
           <Link to="/">
             {logoList !== undefined ? (
               <img
@@ -31,7 +30,7 @@ const Header = () => {
               <></>
             )}
           </Link>
-          <div className="flex items-center gap-4">
+          <div className={styles.header__toggle}>
             <ThemeToggle />
             <LangToggle />
           </div>

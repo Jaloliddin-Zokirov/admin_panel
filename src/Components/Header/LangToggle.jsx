@@ -1,6 +1,7 @@
 import React from "react";
+import styles from "./Header.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { editLang } from "../../../Store/Lang/Lang";
+import { editLang } from "../../Store/Lang/Lang";
 
 const LangToggle = () => {
   const { lang } = useSelector((state) => state.lang);
@@ -16,13 +17,11 @@ const LangToggle = () => {
   };
 
   return (
-    <div className={`cursor-pointer`} onClick={handleThemeToggle}>
+    <div className={styles.lang} onClick={handleThemeToggle}>
       <p
-        className={
-          themeList
-            ? "text-[#ccc5b9] border py-[3px] px-4 rounded-lg"
-            : "text-[#adb5bd] border py-[3px] px-4 rounded-lg"
-        }
+        className={`${styles.text} ${
+          themeList ? styles.lightToggle : styles.darkToggle
+        }`}
       >
         {lang === "ru" ? "UZ" : "RU"}
       </p>

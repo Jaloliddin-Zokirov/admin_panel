@@ -1,6 +1,7 @@
 import React from "react";
+import styles from './Header.module.scss'
 import { useDispatch, useSelector } from "react-redux";
-import { editTheme } from "../../../Store/Theme/Theme";
+import { editTheme } from "../../Store/Theme/Theme";
 
 const ThemeToggle = () => {
   const { themeList } = useSelector((state) => state.theme);
@@ -18,7 +19,7 @@ const ThemeToggle = () => {
 
   return (
     <div
-      className={`flex items-center justify-center w-[35px] h-[35px] cursor-pointer`}
+      className={styles.dark__light}
       onClick={handleThemeToggle}
     >
       {themeList ? (
