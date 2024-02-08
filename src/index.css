@@ -28,8 +28,8 @@ body {
   flex-direction: column;
   height: 100%;
   margin: 0;
-  font-family: "Jeko", "Arial", sans-serif;
-  font-weight: 400;
+  /* font-family: "Jeko", "Arial", sans-serif; */
+  /* font-weight: 400; */
   transition: all 0.2s ease;
   background-color: #495057;
 }

@@ -1,0 +1,217 @@
+.phoneInsta {
+  transition: all 0.2s ease;
+  position: relative;
+  height: 100%;
+}
+
+.light {
+  .phoneInsta__title {
+    color: #403d39;
+  }
+
+  .phoneInsta__link {
+    color: #403d39;
+    span {
+      color: #403d39;
+    }
+    a,
+    .phoneInsta__instaInp,
+    .phoneInsta__telInp {
+      background-color: #ccc5b9;
+      &:hover {
+        background-color: #eae0d5;
+      }
+    }
+  }
+
+  .phoneInsta__btn {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &:hover {
+      background-color: #d6cec2;
+    }
+  }
+
+  .phoneInsta__btnRed {
+    color: #fffcf2;
+    background-color: #6f1d1b;
+    &:hover {
+      background-color: #852322;
+    }
+  }
+
+  .phoneInsta__putBtn {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &:hover {
+      background-color: #eae0d5;
+    }
+  }
+}
+
+.dark {
+  .phoneInsta__title {
+    color: #ced4da;
+  }
+
+  .phoneInsta__link {
+    color: #ced4da;
+    span {
+      color: #ced4da;
+    }
+    a,
+    .phoneInsta__instaInp,
+    .phoneInsta__telInp {
+      background-color: #6c757d;
+      &:hover {
+        background-color: #7b868f;
+      }
+    }
+  }
+
+  .phoneInsta__btn {
+    color: #ced4da;
+    background-color: #6c757d;
+    &:hover {
+      background-color: #7b868f;
+    }
+  }
+
+  .phoneInsta__btnRed {
+    color: #ced4da;
+    background-color: #6f1d1b;
+    &:hover {
+      background-color: #852322;
+    }
+  }
+
+  .phoneInsta__putBtn {
+    color: #212529;
+    background-color: #ced4da;
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+}
+
+.phoneInsta__box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  width: 100%;
+  max-width: 600px;
+}
+
+.phoneInsta__title {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.phoneInsta__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.phoneInsta__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+
+  strong,
+  a {
+    display: block;
+  }
+
+  a,
+  .phoneInsta__instaInp,
+  .phoneInsta__telInp {
+    padding: 4px 18px;
+    border-radius: 22px;
+    font-size: 18px;
+  }
+
+  span {
+    display: block;
+    font-size: 14px;
+  }
+}
+
+.telInp__box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phoneInsta__telInp {
+}
+
+.phoneInsta__btnBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 2.5rem;
+}
+
+.phoneInsta__btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 22px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+}
+
+.phoneInsta__btnRed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 22px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+}
+
+.phoneInsta__modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.phoneInsta__modalText {
+  margin: 1rem 0;
+}
+
+.phoneInsta__modalBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-left: auto;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+  color: #ced4da;
+  background-color: #6f1d1b;
+  &:hover {
+    background-color: #852322;
+  }
+}
+
+.phoneInsta__form {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+}
+
+.phoneInsta__putBtn {
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+}

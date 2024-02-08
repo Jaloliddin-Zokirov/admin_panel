@@ -1,0 +1,271 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 100%;
+  max-width: 600px;
+}
+
+.light {
+  .hero__title,
+  .hero__subtitle,
+  .hero__subtitleGet,
+  .hero__descriptionGet {
+    color: #403d39;
+  }
+
+  .hero__subtitleGet {
+    border-color: #403d39;
+  }
+
+  .hero__label {
+    color: #403d39;
+
+    & > [type="file"]::-webkit-file-upload-button {
+      color: #403d39;
+      background-color: #ccc5b9;
+      &:hover {
+        background-color: #eae0d5;
+      }
+    }
+  }
+
+  .hero__titleInp,
+  .hero__descriptionInp {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &::placeholder {
+      color: #403d39;
+    }
+  }
+
+  .hero__postSubmit,
+  .hero__btn {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &:hover {
+      background-color: #eae0d5;
+    }
+  }
+}
+
+.dark {
+  .hero__title,
+  .hero__subtitle,
+  .hero__subtitleGet,
+  .hero__descriptionGet {
+    color: #ced4da;
+  }
+
+  .hero__subtitleGet {
+    border-color: #ced4da;
+  }
+
+  .hero__label {
+    color: #ced4da;
+
+    & > [type="file"]::-webkit-file-upload-button {
+      color: #212529;
+      background-color: #ced4da;
+      &:hover {
+        background-color: #e9ecef;
+      }
+    }
+  }
+
+  .hero__titleInp,
+  .hero__descriptionInp {
+    color: #212529;
+    background-color: #ced4da;
+    &::placeholder {
+      color: #212529;
+    }
+  }
+
+  .hero__postSubmit,
+  .hero__btn {
+    color: #212529;
+    background-color: #ced4da;
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+}
+
+.hero__box {
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero__title {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.hero__postBox {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.hero__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.hero__ru,
+.hero__uz {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  margin: 0;
+}
+
+.hero__subtitleGet {
+  width: 100%;
+  margin: 0;
+  padding-top: 20px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+  border-top: 1px solid;
+}
+
+.hero__descriptionGet {
+  margin: 0;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.hero__titleInp {
+  width: 100%;
+  border-radius: 8px;
+  padding: 4px 16px;
+}
+
+.hero__descBox {
+  position: relative;
+  width: 100%;
+}
+
+.hero__descriptionInp {
+  width: 100%;
+  height: 80px;
+  resize: none;
+  border-radius: 8px;
+  padding: 4px 60px 4px 16px;
+}
+
+.description__length {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 14px;
+}
+
+.hero__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  & > [type="file"]::-webkit-file-upload-button {
+    border-radius: 9999px;
+    padding: 6px 18px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.hero__imgInp {
+  width: 100%;
+  max-width: 250px;
+}
+
+.hero__btnBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.hero__image {
+  width: 400px;
+  height: 300px;
+}
+
+.hero__btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+}
+
+.hero__postSubmit {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 10px;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+}
+
+.hero__modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__modalText {
+  margin: 1rem 0;
+}
+
+.hero__modalBtn, .hero__btnDel {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-left: auto;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+  color: #ced4da;
+  background-color: #6f1d1b;
+  &:hover {
+    background-color: #852322;
+  }
+}
+
+.hero__btnDel {
+  margin: 0;
+}

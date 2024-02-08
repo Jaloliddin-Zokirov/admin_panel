@@ -11,8 +11,14 @@ const Navbar = ({ theme }) => {
         <Link className={styles.link} to={""}>
           {lang === "ru" ? "Дом" : "Uy"}
         </Link>
+        <Link className={styles.link} to={"phone-insta"}>
+          {lang === "ru" ? "Телефон && Инстаграм" : "Telefon && Instagram"}
+        </Link>
         <Link className={styles.link} to={"logo"}>
           {lang === "ru" ? "Логотип" : "Logotip"}
+        </Link>
+        <Link className={styles.link} to={"hero"}>
+          {lang === "ru" ? "Интерфейс" : "Interfeys"}
         </Link>
         <Link className={styles.link} to={"user"}>
           {lang === "ru" ? "Голоса" : "Ovozlar"}
