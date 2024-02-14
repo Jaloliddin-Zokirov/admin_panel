@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://urchin-app-fuh4a.ondigitalocean.app";
-const Forimage = "https://urchin-app-fuh4a.ondigitalocean.app";
+axios.defaults.baseURL = "https://audio-video-mfh5d.ondigitalocean.app";
+const Forimage = "https://audio-video-mfh5d.ondigitalocean.app";
 
 export {axios, Forimage}
