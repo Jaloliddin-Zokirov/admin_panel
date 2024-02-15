@@ -86,11 +86,11 @@ const PutHero = () => {
                 type="text"
                 id="descRU"
                 required
-                maxLength="38"
+                maxLength="150"
                 placeholder={lang === "ru" ? "Описание" : "Tavsifi"}
                 onChange={(evt) => setValue2(evt.target.value.length)}
               ></textarea>
-              <span className={styles.description__length}>{value2}/38</span>
+              <span className={styles.description__length}>{value2}/150</span>
             </div>
           </div>
           <div className={styles.hero__uz}>
@@ -112,11 +112,11 @@ const PutHero = () => {
                 type="text"
                 id="descUZ"
                 required
-                maxLength="38"
+                maxLength="150"
                 placeholder={lang === "ru" ? "Описание" : "Tavsifi"}
                 onChange={(evt) => setValue(evt.target.value.length)}
               ></textarea>
-              <span className={styles.description__length}>{value}/38</span>
+              <span className={styles.description__length}>{value}/150</span>
             </div>
           </div>
         </div>

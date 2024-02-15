@@ -1,0 +1,282 @@
+.light {
+  .title, .lang__title {
+    color: #403d39;
+  }
+
+  .inp,
+  .textarea {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &::placeholder {
+      color: #403d39;
+    }
+  }
+
+  .label {
+    color: #403d39;
+
+    & > [type="file"]::-webkit-file-upload-button {
+      color: #403d39;
+      background-color: #ccc5b9;
+      &:hover {
+        background-color: #eae0d5;
+      }
+    }
+  }
+
+  .btn {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &:hover {
+      background-color: #eae0d5;
+    }
+  }
+
+  .add__item {
+    color: #403d39;
+    border-color: #403d39;
+  }
+}
+
+.dark {
+  .title, .lang__title {
+    color: #ced4da;
+  }
+
+  .inp,
+  .textarea {
+    color: #212529;
+    background-color: #ced4da;
+    &::placeholder {
+      color: #212529;
+    }
+  }
+
+  .label {
+    color: #ced4da;
+
+    & > [type="file"]::-webkit-file-upload-button {
+      color: #212529;
+      background-color: #ced4da;
+      &:hover {
+        background-color: #e9ecef;
+      }
+    }
+  }
+
+  .btn {
+    color: #212529;
+    background-color: #ced4da;
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+
+  .add__item {
+    color: #ced4da;
+    border-color: #ced4da;
+  }
+}
+
+.user__form {
+  margin-bottom: 100px;
+}
+
+.title {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.post__title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  a {
+    rotate: 20deg;
+  }
+}
+
+.content__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.lang__title {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.inp__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inp {
+  padding: 7px 20px;
+  border-radius: 15px;
+}
+
+.textareaBox {
+  position: relative;
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px 80px 10px 20px;
+  border-radius: 15px;
+  resize: none;
+}
+
+.textarea__limit {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: block;
+  font-size: 14px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  & > [type="file"]::-webkit-file-upload-button {
+    border-radius: 9999px;
+    padding: 6px 18px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.imgInp {
+  width: 100%;
+  max-width: 250px;
+}
+
+.btn__box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #21252970;
+}
+
+.list__card {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.add__item {
+  width: 200px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 300;
+  cursor: pointer;
+  border: 3px dashed;
+  border-radius: 15px;
+}
+
+.item {
+  position: relative;
+  border-radius: 15px;
+}
+
+.users__voice {
+  display: none;
+}
+
+.item__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+.img {
+  display: block;
+  width: 200px;
+  height: 240px;
+  border-radius: 15px;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 14px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 100%) 0%,
+    rgba(0, 0, 0, 70%) 60%,
+    rgba(0, 0, 0, 0%) 100%
+  );
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  color: #ced4da;
+  span {
+    display: block;
+  }
+}
+
+.play {
+  width: 35px;
+  height: 35px;
+  color: #ced4da;
+  cursor: pointer;
+  border-radius: 50%;
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+}

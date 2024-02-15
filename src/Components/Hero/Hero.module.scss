@@ -6,9 +6,9 @@
 
 .hero__form {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%);
   width: 100%;
   max-width: 600px;
 }
@@ -218,6 +218,7 @@
 .hero__image {
   width: 400px;
   height: 300px;
+  border-radius: 15px;
 }
 
 .hero__btn {
@@ -250,7 +251,8 @@
   margin: 1rem 0;
 }
 
-.hero__modalBtn, .hero__btnDel {
+.hero__modalBtn,
+.hero__btnDel {
   display: flex;
   align-items: center;
   gap: 0.7rem;

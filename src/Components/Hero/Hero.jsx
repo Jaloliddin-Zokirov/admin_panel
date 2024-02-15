@@ -34,6 +34,7 @@ const Hero = () => {
   }, [axios, navigate, dispatch, successUpload]);
 
   useEffect(() => {
+    console.log(id);
     if (id !== null) {
       axios
         .delete(`/api/hero/${id}`)
@@ -106,6 +107,8 @@ const Hero = () => {
               <img
                 className={styles.hero__image}
                 src={`${Forimage}${isHero?.ru.image}`}
+                width={400}
+                height={300}
                 alt="hero image"
               />
             </div>
