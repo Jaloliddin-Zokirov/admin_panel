@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  overflow-y: hidden;
 }
 
 .navbar {
@@ -18,4 +19,5 @@
 .outlet {
   width: 80%;
   padding: 24px;
+  overflow-y: scroll;
 }

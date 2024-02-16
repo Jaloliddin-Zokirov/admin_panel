@@ -10,7 +10,7 @@ import PostUser from "../User/PostUser";
 import Support from "../Support/Support";
 import Settings from "../Settings/Settings";
 import PhoneInsta from "../PhoneInsta/PhoneInsta";
-import PutUser from "../User/PutUser";
+import UserCard from "../User/UserCard";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
         <Route path="hero" element={<Hero />} />
         <Route path="user" element={<User />}>
           <Route index element={<Users />} />
-          <Route path=":id" element={<PutUser />} />
+          <Route path=":id" element={<UserCard />} />
           <Route path="add-user" element={<PostUser />} />
         </Route>
         <Route path="support" element={<Support />} />

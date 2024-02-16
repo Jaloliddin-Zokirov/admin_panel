@@ -12,6 +12,6 @@ const UserCard = createSlice({
   },
 });
 
-export const { editUserCard, editUserId } = UserCard.actions;
+export const { editUserCard } = UserCard.actions;
 
 export default UserCard.reducer;

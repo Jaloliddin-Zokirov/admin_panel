@@ -8,7 +8,7 @@ function PreLoader1({ theme }) {
     <>
       <ReactLoading
         type={"bars"}
-        color={theme ? "#0F0F0F" : "#B8B8B8"}
+        color={theme ? "#5E503F" : "#6c757d"}
         height={100}
         width={100}
       />

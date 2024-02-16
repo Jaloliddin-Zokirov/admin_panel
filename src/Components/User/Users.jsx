@@ -60,7 +60,7 @@ const Users = () => {
           +
         </Link>
         {userList !== undefined ? (
-          getVisibleCategory().map((el, index) => {
+          userList?.map((el, index) => {
             return (
               <li className={styles.item} key={el._id}>
                 <audio className={styles.users__voice} controls>

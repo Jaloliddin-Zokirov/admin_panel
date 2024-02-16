@@ -34,7 +34,6 @@ const Hero = () => {
   }, [axios, navigate, dispatch, successUpload]);
 
   useEffect(() => {
-    console.log(id);
     if (id !== null) {
       axios
         .delete(`/api/hero/${id}`)

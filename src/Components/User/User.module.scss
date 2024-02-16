@@ -1,9 +1,16 @@
 .light {
-  .title, .lang__title {
+  .title,
+  .lang__title {
     color: #403d39;
   }
 
-  .inp,
+  .inp {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &::placeholder {
+      color: #403d39;
+    }
+  }
   .textarea {
     color: #403d39;
     background-color: #ccc5b9;
@@ -39,7 +46,8 @@
 }
 
 .dark {
-  .title, .lang__title {
+  .title,
+  .lang__title {
     color: #ced4da;
   }
 
@@ -263,9 +271,15 @@
 .textBox {
   display: flex;
   flex-direction: column;
-  color: #ced4da;
+  width: 100%;
+  max-width: 130px;
   span {
     display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: flex-start;
+    color: #ced4da;
   }
 }
 
@@ -279,4 +293,51 @@
     width: 35px;
     height: 35px;
   }
+}
+
+
+////      UserCard //// 
+.card {
+
+}
+
+.card__top {
+
+}
+
+.name__box {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.name {
+
+}
+
+.desc {
+
+}
+
+.card__voice {
+
+}
+
+.img__video {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.image {
+
+}
+
+.video {
+
+}
+
+.card__bottom {
+
 }
