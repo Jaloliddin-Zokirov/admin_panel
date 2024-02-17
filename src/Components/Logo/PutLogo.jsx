@@ -4,15 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { axios } from "../../server/api";
 import { message } from "antd";
 import { putLogo } from "../../Store/Logo/Logo";
-import { useNavigate } from "react-router-dom";
-import { editError } from "../../Store/Error/Error";
 
 const PutLogo = () => {
   const { lang } = useSelector((state) => state.lang);
   const { logoList } = useSelector((state) => state.logo);
   const { putLogoList } = useSelector((state) => state.logo);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   async function handleSubmit() {
     const logoTitle = {
@@ -42,8 +39,11 @@ const PutLogo = () => {
       );
       dispatch(putLogo(!putLogoList));
     } catch (error) {
-      dispatch(editError(error));
-      navigate("/error");
+      message.error(
+        lang === "ru"
+          ? "Произошла ошибка. Попробуйте позже"
+          : "Xatolik yuz berdi. Keyinroq urinib ko'ring"
+      );
     }
   }
 

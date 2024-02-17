@@ -46,11 +46,14 @@ const Hero = () => {
           dispatch(editHero([]));
         })
         .catch((err) => {
-          navigate("/error");
-          dispatch(editError(err));
+          message.error(
+            lang === "ru"
+              ? "Произошла ошибка. Попробуйте позже"
+              : "Xatolik yuz berdi. Keyinroq urinib ko'ring"
+          );
         });
     }
-  }, [id, setId, axios, navigate, dispatch]);
+  }, [id, setId, axios, dispatch]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
