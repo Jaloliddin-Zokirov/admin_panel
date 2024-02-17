@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import styles from "./User.module.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { axios } from "../../server/api";
 import { message } from "antd";
-import { editError } from "../../Store/Error/Error";
 
 const PostUser = () => {
   const { themeList } = useSelector((state) => state.theme);
   const { lang } = useSelector((state) => state.lang);
   const [value, setValue] = useState(0);
-  const dispatch = useDispatch();
+  const [value2, setValue2] = useState(0);
   const navigate = useNavigate();
 
-  async function handleSubmit() {
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
     const RuTitle = {
       firstname: document.getElementById("firstnameRu").value,
       lastname: document.getElementById("lastnameRu").value,
@@ -30,18 +30,16 @@ const PostUser = () => {
       video: document.getElementById("video").files[0],
       smallaudio: document.getElementById("smallaudio").files[0],
       image: document.getElementById("image").files[0],
-      smallimage: document.getElementById("smallimage").files[0],
     };
 
-    const formData = new FormData();
-    formData.append("ru", JSON.stringify(RuTitle));
-    formData.append("uz", JSON.stringify(UzTitle));
-    formData.append("ru_video", Image.video);
-    formData.append("ru_smallaudio", Image.smallaudio);
-    formData.append("ru_image", Image.image);
-    formData.append("ru_smallimage", Image.smallimage);
-
     try {
+      const formData = new FormData();
+      formData.append("ru", JSON.stringify(RuTitle));
+      formData.append("uz", JSON.stringify(UzTitle));
+      formData.append("ru_video", Image.video);
+      formData.append("ru_smallaudio", Image.smallaudio);
+      formData.append("ru_image", Image.image);
+
       const response = await axios.post("/api/audios", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -53,20 +51,16 @@ const PostUser = () => {
       );
       navigate("/user");
     } catch (error) {
-      dispatch(editError(error));
-      navigate("/error");
+      message.error(lang === "ru" ? "Не удалось загрузить" : "Yuklab bo'lmadi");
     }
-  }
+  };
 
   return (
     <form
       className={`${styles.user__form} ${
         themeList ? styles.light : styles.dark
       }`}
-      onSubmit={(evt) => {
-        evt.preventDefault();
-        handleSubmit();
-      }}
+      onSubmit={(evt) => handleSubmit(evt)}
     >
       <h2 className={`${styles.title} ${styles.post__title}`}>
         <Link to={"/user"}>
@@ -181,13 +175,13 @@ const PostUser = () => {
                   className={styles.textarea}
                   required
                   maxLength={150}
-                  onChange={(evt) => setValue(evt.target.value.length)}
+                  onChange={(evt) => setValue2(evt.target.value.length)}
                   placeholder={
                     lang === "ru" ? "Введите описание..." : "Tavsif kiriting..."
                   }
                   id="descriptionUz"
                 ></textarea>
-                <span className={styles.textarea__limit}>{value}/150</span>
+                <span className={styles.textarea__limit}>{value2}/150</span>
               </div>
             </div>
           </div>
@@ -208,21 +202,8 @@ const PostUser = () => {
           />
         </label>
         <label className={styles.label}>
-          {lang === "ru"
-            ? "Загрузите основного изображения:"
-            : "Asosiy rasim yuklash:"}
+          {lang === "ru" ? "Загрузить изображение:" : "Rasim yuklash:"}
           <input className={styles.imgInp} type="file" id="image" required />
-        </label>
-        <label className={styles.label}>
-          {lang === "ru"
-            ? "Загрузите изображение для обложки:"
-            : "Oblojka uchun rasm yuklash:"}
-          <input
-            className={styles.imgInp}
-            type="file"
-            id="smallimage"
-            required
-          />
         </label>
         <div className={styles.btn__box}>
           <button className={styles.btn} type="button">

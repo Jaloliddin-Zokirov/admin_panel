@@ -2,9 +2,7 @@ import React from "react";
 import styles from "./PhoneInsta.module.scss";
 import { axios } from "../../server/api";
 import { message } from "antd";
-import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { editError } from "../../Store/Error/Error";
 import { successUploadPhoneInsta } from "../../Store/PhoneInsta/PhoneInsta";
 
 const PostPhoneInsta = () => {
@@ -12,7 +10,6 @@ const PostPhoneInsta = () => {
   const { themeList } = useSelector((state) => state.theme);
   const { successUpload } = useSelector((state) => state.phoneInsta);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   async function handleSubmit() {
     const tel = {
@@ -40,8 +37,11 @@ const PostPhoneInsta = () => {
 
       dispatch(successUploadPhoneInsta(!successUpload));
     } catch (error) {
-      dispatch(editError(error));
-      navigate("/error");
+      message.error(
+        lang === "ru"
+          ? "Произошла ошибка. Попробуйте позже"
+          : "Xatolik yuz berdi. Keyinroq urinib ko'ring"
+      );
     }
   }
 

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const PutUser = () => {
-  return (
-    <div>PutUser</div>
-  )
-}
+  return <div>PutUser</div>;
+};
 
-export default PutUser
+export default PutUser;

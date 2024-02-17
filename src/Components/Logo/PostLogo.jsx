@@ -3,15 +3,12 @@ import styles from "./Logo.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { axios } from "../../server/api";
 import { message } from "antd";
-import { editError } from "../../Store/Error/Error";
-import { useNavigate } from "react-router-dom";
 import { successUploadLogo } from "../../Store/Logo/Logo";
 
 const PostLogo = () => {
   const { lang } = useSelector((state) => state.lang);
   const { successUpload } = useSelector((state) => state.logo);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   async function handleSubmit() {
     const logoTitle = {
@@ -41,8 +38,11 @@ const PostLogo = () => {
       );
       dispatch(successUploadLogo(!successUpload));
     } catch (error) {
-      dispatch(editError(error));
-      navigate("/error");
+      message.error(
+        lang === "ru"
+          ? "Произошла ошибка. Попробуйте позже"
+          : "Xatolik yuz berdi. Keyinroq urinib ko'ring"
+      );
     }
   }
 

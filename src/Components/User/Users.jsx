@@ -69,7 +69,7 @@ const Users = () => {
                 <Link className={styles.item__link} to={el._id}>
                   <img
                     className={styles.img}
-                    src={el[lang].smallimage}
+                    src={el[lang].image}
                     width={200}
                     height={240}
                     alt=""

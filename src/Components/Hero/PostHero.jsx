@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { UploadOutlined } from "@ant-design/icons";
 import { axios } from "../../server/api";
 import { message } from "antd";
-import { editError } from "../../Store/Error/Error";
-import { useNavigate } from "react-router-dom";
 import { successUploadHero } from "../../Store/Hero/Hero";
 
 const PostHero = () => {
@@ -15,7 +13,6 @@ const PostHero = () => {
   const [value, setValue] = useState("0");
   const [value2, setValue2] = useState("0");
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   async function handleSubmit() {
     const RuTitle = {
@@ -47,8 +44,11 @@ const PostHero = () => {
       );
       dispatch(successUploadHero(!successUpload));
     } catch (error) {
-      dispatch(editError(error));
-      navigate("/error");
+      message.error(
+        lang === "ru"
+          ? "Произошла ошибка. Попробуйте позже"
+          : "Xatolik yuz berdi. Keyinroq urinib ko'ring"
+      );
     }
   }
 
