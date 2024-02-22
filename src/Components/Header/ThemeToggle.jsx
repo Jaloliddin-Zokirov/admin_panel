@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './Header.module.scss'
+import styles from "./Header.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { editTheme } from "../../Store/Theme/Theme";
 
@@ -10,18 +10,15 @@ const ThemeToggle = () => {
   const handleThemeToggle = () => {
     if (themeList) {
       dispatch(editTheme(!themeList));
-      document.getElementById("root").classList.remove("light");
+      document.getElementById("rootBody").classList.remove("light");
     } else {
       dispatch(editTheme(!themeList));
-      document.getElementById("root").classList.add("light");
+      document.getElementById("rootBody").classList.add("light");
     }
   };
 
   return (
-    <div
-      className={styles.dark__light}
-      onClick={handleThemeToggle}
-    >
+    <div className={styles.dark__light} onClick={handleThemeToggle}>
       {themeList ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

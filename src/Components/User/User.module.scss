@@ -297,6 +297,8 @@
 
 ////      UserCard ////
 .card {
+  width: 100%;
+  max-width: 1000px;
 }
 
 .card__light {
@@ -315,6 +317,13 @@
   }
   .play__pause {
     color: #403d39;
+  }
+  .card__title {
+    color: #403d39;
+  }
+  .newAudio {
+    color: #403d39;
+    background-color: #ccc5b9;
   }
 }
 
@@ -335,11 +344,19 @@
   .play__pause {
     color: #ced4da;
   }
+  .card__title {
+    color: #ced4da;
+  }
+  .newAudio {
+    color: #ced4da;
+    background-color: #ced4da30;
+  }
 }
 
 .card__top {
   width: 100%;
   max-width: 870px;
+  margin-bottom: 40px;
 }
 
 .name__box {
@@ -360,7 +377,8 @@
     color: #ced4da;
     background-color: #6f1d1b;
   }
-  span {
+  span,
+  a {
     display: flex;
     align-items: center;
     gap: 0.7rem;
@@ -455,4 +473,121 @@
 }
 
 .card__bottom {
+}
+
+.card__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+}
+
+.sorted {
+  text-align: end;
+  margin-bottom: 24px;
+}
+
+.newAudio {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 10px;
+}
+
+.card__audioList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.audio__item {
+  padding: 15px 30px 20px;
+  box-shadow: 2px 2px 2px #21252970;
+  border-radius: 20px;
+}
+
+.audio__itemLight {
+  background-color: #eae0d5;
+  .audio__text {
+    color: #403d39;
+  }
+  .audio__timeline {
+    color: #403d39;
+  }
+  .audio__playPause {
+    color: #403d39;
+  }
+}
+
+.audio__itemDark {
+  background-color: #343a40;
+  .audio__text {
+    color: #ced4da;
+  }
+  .audio__timeline {
+    color: #ced4da;
+  }
+  .audio__playPause {
+    color: #ced4da;
+  }
+}
+
+.audio__top {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.audio__text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 750px;
+
+  span {
+    display: block;
+    font-size: 18px;
+  }
+  span:nth-child(1) {
+    font-size: 24px;
+  }
+}
+
+.audio__timeline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  span {
+    display: block;
+    font-size: 18px;
+  }
+  span:nth-child(2) {
+    rotate: 90deg;
+    cursor: pointer;
+  }
+}
+
+.audio__bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.audio__playPause {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 50%;
+  svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.audio__waveform {
+  width: 100%;
 }

@@ -11,6 +11,9 @@ import Support from "../Support/Support";
 import Settings from "../Settings/Settings";
 import PhoneInsta from "../PhoneInsta/PhoneInsta";
 import UserCard from "../User/UserCard";
+import CreateAudio from "../User/CreateAudio/CreateAudio";
+import EditUser from "../User/Edit/EditUser";
+import EditAudio from "../User/Edit/EditAudio";
 
 const App = () => {
   return (
@@ -22,7 +25,10 @@ const App = () => {
         <Route path="user" element={<User />}>
           <Route index element={<Users />} />
           <Route path=":id" element={<UserCard />} />
+          <Route path="edit-user" element={<EditUser />} />
+          <Route path="edit-audio/:id" element={<EditAudio />} />
           <Route path="add-user" element={<PostUser />} />
+          <Route path="create-audio" element={<CreateAudio />} />
         </Route>
         <Route path="support" element={<Support />} />
         <Route path="settings" element={<Settings />} />

@@ -8,8 +8,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { Modal, message } from "antd";
 import { axios } from "../../server/api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { editUserCard } from "../../Store/UserCard/UserCard";
+import UserAudios from "./UserAudios";
 
 const UserCard = React.memo(() => {
   UserCardWrite();
@@ -101,7 +102,7 @@ const UserCard = React.memo(() => {
     };
   }, [userCard, lang, initializeWaveform]);
 
-  const handlePlay = useCallback(() => {
+  const handlePlay1 = useCallback(() => {
     setIsPlaying((prevIsPlaying) => {
       if (!prevIsPlaying) {
         waveform?.play();
@@ -117,7 +118,7 @@ const UserCard = React.memo(() => {
       switch (event.code) {
         case "Space":
           event.preventDefault();
-          handlePlay();
+          handlePlay1();
           break;
         case "ArrowLeft":
           if (isPlaying) {
@@ -140,7 +141,7 @@ const UserCard = React.memo(() => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handlePlay, isPlaying, waveform, userCard[lang]]);
+  }, [handlePlay1, isPlaying, waveform, userCard[lang]]);
 
   const timeCalculator = (value) => {
     let minutes = Math.floor(value / 60);
@@ -180,6 +181,18 @@ const UserCard = React.memo(() => {
     };
   }, [waveform, isPlaying, userCard[lang]]);
 
+  const [currentPlaying, setCurrentPlaying] = useState(null);
+  const handlePlay = useCallback(
+    (id) => {
+      setCurrentPlaying((prevId) => (prevId === id ? null : id));
+    },
+    [currentPlaying]
+  );
+
+  const handlePause = useCallback(() => {
+    setCurrentPlaying(null);
+  }, []);
+
   return (
     <>
       {userCard[lang] !== undefined ? (
@@ -194,10 +207,10 @@ const UserCard = React.memo(() => {
                 {userCard[lang]?.firstname} {userCard[lang]?.lastname}
               </p>
               <div className={styles.edit__delete}>
-                <span className={styles.edit__btn}>
+                <Link className={styles.edit__btn} to={"/user/edit-user"}>
                   EDIT
                   <EditIcon fontSize="small" />
-                </span>
+                </Link>
 
                 <span className={styles.delete__btn} onClick={showModal}>
                   DELETE
@@ -231,7 +244,7 @@ const UserCard = React.memo(() => {
             </div>
             <p className={styles.desc}>{userCard[lang]?.description}</p>
             <div className={styles.audio}>
-              <div className={styles.play__pause} onClick={handlePlay}>
+              <div className={styles.play__pause} onClick={handlePlay1}>
                 {isPlaying ? (
                   <svg
                     fill="currentColor"
@@ -293,7 +306,31 @@ const UserCard = React.memo(() => {
               </video>
             </div>
           </div>
-          <ul className={styles.card__bottom}></ul>
+          <div className={styles.card__bottom}>
+            <h2 className={styles.card__title}>
+              {lang === "ru" ? "Аудиозаписи" : "Audio yozuvlar"}
+            </h2>
+            <div className={styles.sorted}>
+              <Link className={styles.newAudio} to={"/user/create-audio"}>
+                {lang === "ru" ? "Добавить новый звук" : "Yangi audio qo'shish"}
+              </Link>
+            </div>
+            <ul className={styles.card__audioList}>
+              {userCard[lang].audios.map((el) => {
+                return (
+                  <UserAudios
+                    key={el.id}
+                    el={el}
+                    isPlaying={el.id === currentPlaying}
+                    onPlay={handlePlay}
+                    onPause={handlePause}
+                    yourAudioArray={userCard[lang].audios}
+                    currentPlaying={currentPlaying}
+                  />
+                );
+              })}
+            </ul>
+          </div>
         </div>
       ) : (
         <Loading />
