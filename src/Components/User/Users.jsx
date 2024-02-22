@@ -72,7 +72,7 @@ const Users = () => {
                     src={el[lang].image}
                     width={200}
                     height={240}
-                    alt=""
+                    alt="user avatar image"
                   />
                 </Link>
                 <div className={styles.content}>

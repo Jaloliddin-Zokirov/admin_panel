@@ -1,0 +1,160 @@
+.form {
+  width: 100%;
+  max-width: 800px;
+}
+
+.light {
+  .title {
+    color: #403d39;
+  }
+  .inp__box {
+    input {
+      color: #403d39;
+      background-color: #ccc5b9;
+      &::placeholder {
+        color: #403d39;
+      }
+    }
+    .textareaBox {
+      textarea {
+        color: #403d39;
+        background-color: #ccc5b9;
+        &::placeholder {
+          color: #403d39;
+        }
+      }
+      span {
+        color: #403d39;
+      }
+    }
+  }
+  .label {
+    color: #403d39;
+
+    & > [type="file"]::-webkit-file-upload-button {
+      color: #403d39;
+      background-color: #ccc5b9;
+      &:hover {
+        background-color: #eae0d5;
+      }
+    }
+  }
+  .btn {
+    color: #403d39;
+    background-color: #ccc5b9;
+    &:hover {
+      background-color: #eae0d5;
+    }
+  }
+}
+
+.dark {
+  .title {
+    color: #ced4da;
+  }
+  .inp__box {
+    input {
+      color: #212529;
+      background-color: #ced4da;
+      &::placeholder {
+        color: #212529;
+      }
+    }
+    .textareaBox {
+      textarea {
+        color: #212529;
+        background-color: #ced4da;
+        &::placeholder {
+          color: #212529;
+        }
+      }
+      span {
+        color: #212529;
+      }
+    }
+  }
+  .label {
+    color: #ced4da;
+
+    & > [type="file"]::-webkit-file-upload-button {
+      color: #212529;
+      background-color: #ced4da;
+      &:hover {
+        background-color: #e9ecef;
+      }
+    }
+  }
+  .btn {
+    color: #212529;
+    background-color: #ced4da;
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.inp__bigBox {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.inp__box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  input {
+    width: 100%;
+    border-radius: 15px;
+    padding: 6px 14px;
+  }
+  .textareaBox {
+    width: 100%;
+    position: relative;
+    textarea {
+      width: 100%;
+      padding: 6px 64px 6px 14px;
+      border-radius: 15px;
+      resize: none;
+    }
+    span {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+    }
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-bottom: 40px;
+
+  & > [type="file"]::-webkit-file-upload-button {
+    border-radius: 9999px;
+    padding: 6px 18px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.btn {
+  display: block;
+  margin-left: auto;
+  padding: 4px 20px;
+  border-radius: 10px;
+}
