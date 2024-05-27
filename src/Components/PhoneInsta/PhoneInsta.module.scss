@@ -4,6 +4,23 @@
   height: 100%;
 }
 
+.loading__BigBox {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  left: -24px;
+  bottom: -24px;
+  background: #00000090;
+  z-index: 1;
+}
+
+.loading__box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .light {
   .phoneInsta__title {
     color: #403d39;

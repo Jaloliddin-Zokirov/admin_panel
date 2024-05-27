@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./User.module.scss";
 import { useSelector } from "react-redux";
-import Loading from "react-loading";
+import Loading from "../Loading/Loading";
 import UserWrite from "../../Store/User/UserWrite";
 import { Link } from "react-router-dom";
 

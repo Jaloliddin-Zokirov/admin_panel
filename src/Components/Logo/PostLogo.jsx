@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Logo.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { axios } from "../../server/api";
 import { message } from "antd";
 import { successUploadLogo } from "../../Store/Logo/Logo";
+import ReactLoading from "react-loading";
 
 const PostLogo = () => {
   const { lang } = useSelector((state) => state.lang);
   const { successUpload } = useSelector((state) => state.logo);
+  const { themeList } = useSelector((state) => state.theme);
   const dispatch = useDispatch();
+  const [loadingCheck, setLoadingCheck] = useState(false);
 
   async function handleSubmit() {
     const logoTitle = {
@@ -27,6 +30,7 @@ const PostLogo = () => {
     formData.append("light", logoLight.light);
 
     try {
+      setLoadingCheck(true);
       const response = await axios.post("/api/logo", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -36,6 +40,7 @@ const PostLogo = () => {
       message.success(
         lang === "ru" ? "Загружено успешно" : "Muvaffaqiyatli yuklandi"
       );
+      setLoadingCheck(false);
       dispatch(successUploadLogo(!successUpload));
     } catch (error) {
       message.error(
@@ -47,57 +52,73 @@ const PostLogo = () => {
   }
 
   return (
-    <form
-      className={styles.logo__form}
-      onSubmit={(evt) => {
-        evt.preventDefault();
-        handleSubmit();
-      }}
-    >
-      <h2 className={styles.logo__title}>
-        {lang === "ru" ? "Размещение логотипа" : "Logotip joylash"}
-      </h2>
-      <label className={styles.logo__label}>
-        {lang === "ru" ? "Заголовок" : "Sarlavha"}
-        <input
-          className={styles.logo__inpTitle}
-          type="text"
-          name="title"
-          placeholder="Write title"
-          id="title"
-          required
-        />
-      </label>
-      <label className={styles.logo__label}>
-        {lang === "ru"
-          ? "Загрузите черное изображение"
-          : "Qora rangli rasimni yuklang"}
-        <input
-          className={styles.logo__inpImg}
-          type="file"
-          name="dark"
-          id="dark"
-          required
-        />
-      </label>
-      <label className={styles.logo__label}>
-        {lang === "ru"
-          ? "Загрузите белое изображение"
-          : "Oq rangli rasimni yuklang"}
-        <input
-          className={styles.logo__inpImg}
-          type="file"
-          name="light"
-          id="light"
-          required
-        />
-      </label>
-      <div className={styles.logo__btnBox}>
-        <button className={styles.logo__putBtn} type="submit">
-          Submit
-        </button>
-      </div>
-    </form>
+    <>
+      {loadingCheck ? (
+        <div className={styles.loading__BigBox}>
+          <div className={styles.loading__box}>
+            <ReactLoading
+              type={"bars"}
+              color={themeList ? "#5E503F" : "#6c757d"}
+              height={100}
+              width={100}
+            />
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+      <form
+        className={styles.logo__form}
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          handleSubmit();
+        }}
+      >
+        <h2 className={styles.logo__title}>
+          {lang === "ru" ? "Размещение логотипа" : "Logotip joylash"}
+        </h2>
+        <label className={styles.logo__label}>
+          {lang === "ru" ? "Заголовок" : "Sarlavha"}
+          <input
+            className={styles.logo__inpTitle}
+            type="text"
+            name="title"
+            placeholder="Write title"
+            id="title"
+            required
+          />
+        </label>
+        <label className={styles.logo__label}>
+          {lang === "ru"
+            ? "Загрузите черное изображение"
+            : "Qora rangli rasimni yuklang"}
+          <input
+            className={styles.logo__inpImg}
+            type="file"
+            name="dark"
+            id="dark"
+            required
+          />
+        </label>
+        <label className={styles.logo__label}>
+          {lang === "ru"
+            ? "Загрузите белое изображение"
+            : "Oq rangli rasimni yuklang"}
+          <input
+            className={styles.logo__inpImg}
+            type="file"
+            name="light"
+            id="light"
+            required
+          />
+        </label>
+        <div className={styles.logo__btnBox}>
+          <button className={styles.logo__putBtn} type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 

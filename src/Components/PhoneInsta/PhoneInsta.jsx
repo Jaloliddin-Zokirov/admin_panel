@@ -12,6 +12,7 @@ import {
   editPhoneInsta,
   putPhoneInsta,
 } from "../../Store/PhoneInsta/PhoneInsta";
+import ReactLoading from "react-loading";
 
 const PhoneInsta = React.memo(() => {
   const { lang } = useSelector((state) => state.lang);

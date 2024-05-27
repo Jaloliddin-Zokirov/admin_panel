@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./PhoneInsta.module.scss";
 import { axios } from "../../server/api";
-import { message } from "antd";
+import { Spin, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { successUploadPhoneInsta } from "../../Store/PhoneInsta/PhoneInsta";
+import ReactLoading from "react-loading";
 
 const PostPhoneInsta = () => {
   const { lang } = useSelector((state) => state.lang);
   const { themeList } = useSelector((state) => state.theme);
   const { successUpload } = useSelector((state) => state.phoneInsta);
   const dispatch = useDispatch();
+  const [loadingCheck, setLoadingCheck] = useState(false);
 
   async function handleSubmit() {
     const tel = {
@@ -25,6 +27,7 @@ const PostPhoneInsta = () => {
     };
 
     try {
+      setLoadingCheck(true);
       const response = await axios.post(`/api/phone-number`, jsonData, {
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +37,7 @@ const PostPhoneInsta = () => {
       message.success(
         lang === "ru" ? "Загружено успешно" : "Muvaffaqiyatli yuklandi"
       );
-
+      setLoadingCheck(false);
       dispatch(successUploadPhoneInsta(!successUpload));
     } catch (error) {
       message.error(
@@ -51,6 +54,20 @@ const PostPhoneInsta = () => {
         themeList ? styles.light : styles.dark
       }`}
     >
+      {loadingCheck ? (
+        <div className={styles.loading__BigBox}>
+          <div className={styles.loading__box}>
+            <ReactLoading
+              type={"bars"}
+              color={themeList ? "#5E503F" : "#6c757d"}
+              height={100}
+              width={100}
+            />
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
       <form
         className={styles.phoneInsta__box}
         onSubmit={(evt) => {
@@ -85,7 +102,7 @@ const PostPhoneInsta = () => {
           <div className={styles.phoneInsta__link}>
             <strong>{lang === "ru" ? "Инстаграм: " : "Instagram: "}</strong>
             <div className={styles.telInp__box}>
-              <span>https://www.instagram.com/</span>
+              <span>@</span>
               <input
                 className={styles.phoneInsta__instaInp}
                 type="text"

@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./PhoneInsta.module.scss";
 import { axios } from "../../server/api";
 import { message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { putPhoneInsta } from "../../Store/PhoneInsta/PhoneInsta";
+import ReactLoading from "react-loading";
 
 const PutPhoneInsta = () => {
   const { lang } = useSelector((state) => state.lang);
   const { themeList } = useSelector((state) => state.theme);
   const { phoneInsta } = useSelector((state) => state.phoneInsta);
   const dispatch = useDispatch();
+  const [loadingCheck, setLoadingCheck] = useState(false);
 
   async function handleSubmit() {
     const tel = {
@@ -25,6 +27,7 @@ const PutPhoneInsta = () => {
     };
 
     try {
+      setLoadingCheck(true);
       const response = await axios.put(
         `/api/phone-number/${phoneInsta._id}`,
         jsonData,
@@ -38,6 +41,7 @@ const PutPhoneInsta = () => {
       message.success(
         lang === "ru" ? "Загружено успешно" : "Muvaffaqiyatli yuklandi"
       );
+      setLoadingCheck(false);
       dispatch(putPhoneInsta(true));
     } catch (error) {
       message.error(
@@ -54,6 +58,20 @@ const PutPhoneInsta = () => {
         themeList ? styles.light : styles.dark
       }`}
     >
+      {loadingCheck ? (
+        <div className={styles.loading__BigBox}>
+          <div className={styles.loading__box}>
+            <ReactLoading
+              type={"bars"}
+              color={themeList ? "#5E503F" : "#6c757d"}
+              height={100}
+              width={100}
+            />
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
       <form
         className={styles.phoneInsta__box}
         onSubmit={(evt) => {
